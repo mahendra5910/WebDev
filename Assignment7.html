@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Link Tags in HTML</title>
+
+  <!-- Link to Day Theme (default) -->
+  <link id="themeStylesheet" rel="stylesheet" href="day.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://via.placeholder.com/16" type="image/png">
+
+  <style>
+    /* Just in case CSS file is missing, fallback here */
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .link-box {
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Link Tags</h1>
+  <p>This page demonstrates both <code>&lt;a&gt;</code> and <code>&lt;link&gt;</code> tags.</p>
+
+  <div class="link-box">
+    <!-- Anchor Tags Examples -->
+    <p><a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a></p>
+    <p><a href="sample.pdf" download>Download Sample PDF</a></p>
+    <p><a href="#bottom">Jump to Bottom</a></p>
+  </div>
+
+  <!-- Unique: Theme Switcher using link tag -->
+  <div class="link-box">
+    <button class="btn" onclick="switchTheme()">🌗 Toggle Theme</button>
+  </div>
+
+  <div style="height: 500px;"></div> <!-- space for scrolling -->
+
+  <h2 id="bottom">Bottom of the Page</h2>
+
+  <script>
+    function switchTheme() {
+      const link = document.getElementById('themeStylesheet');
+      link.href = link.href.includes('day.css') ? 'night.css' : 'day.css';
+    }
+  </script>
+</body>
+</html>
